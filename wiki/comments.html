@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syntax Rules - Noviq Documentation</title>
+    <title>Comments - Noviq Documentation</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
 </head>
@@ -25,46 +25,56 @@
                 <li><a href="variables.html">Variable System</a></li>
                 <li><a href="display.html">Display System</a></li>
                 <li><a href="strings.html">String Formatting</a></li>
-                <li><a href="syntax.html" class="active">Syntax Rules</a></li>
+                <li><a href="syntax.html">Syntax Rules</a></li>
                 <li><a href="errors.html">Error Handling</a></li>
                 <li><a href="arithmetic.html">Arithmetic Operations</a></li>
                 <li><a href="logical.html">Logical Operations</a></li>
-                <li><a href="comments.html">Comments</a></li>
+                <li><a href="comments.html" class="active">Comments</a></li>
             </ul>
         </aside>
 
         <main class="content">
-            <h1>Syntax Rules</h1>
+            <h1>Comments</h1>
             
-            <h2>Variable Rules</h2>
-            <ul>
-                <li>Must start with letter or underscore</li>
-                <li>Can contain letters, numbers, underscores</li>
-                <li>Case-sensitive</li>
-                <li>No special characters or spaces</li>
-            </ul>
-
+            <h2>Single-line Comments</h2>
+            <p>Use the hash symbol (#) for single-line comments:</p>
             <div class="code-example">
                 <pre><code class="language-noviq">
-valid_name = 42
-userName = "John"
-_private = true
+x = 5 # This sets x to 5
+# This entire line is a comment
+result = x + 10  # Add 10 to x
                 </code></pre>
             </div>
 
-            <h2>String Rules</h2>
+            <h2>Multi-line Comments</h2>
+            <p>Use double hash symbols (##) for multi-line comments:</p>
+            <div class="code-example">
+                <pre><code class="language-noviq">
+##
+This is a multi-line comment
+It can span multiple lines
+The interpreter ignores everything between the markers
+##
+
+x = 42  # Code continues here
+                </code></pre>
+            </div>
+
+            <h2>Comment Rules</h2>
             <ul>
-                <li>Must use matching quotes ('' or "")</li>
-                <li>Cannot mix quote types</li>
-                <li>Can contain any characters</li>
+                <li>Comments cannot be nested</li>
+                <li>Multi-line comment markers must be on their own lines (whitespace allowed)</li>
+                <li>Single-line comments can appear anywhere on a line</li>
+                <li>Code after a comment marker on the same line is ignored</li>
+                <li>Comments do not affect line numbering for error reporting</li>
             </ul>
 
-            <h2>General Rules</h2>
+            <h2>Best Practices</h2>
             <ul>
-                <li>One command per line</li>
-                <li>No line terminators (semicolons) needed</li>
-                <li>Whitespace is ignored except in strings</li>
-                <li>Empty lines are allowed</li>
+                <li>Use comments to explain complex logic</li>
+                <li>Keep comments up-to-date with code changes</li>
+                <li>Use multi-line comments for temporary code disabling</li>
+                <li>Add meaningful comments rather than stating the obvious</li>
             </ul>
         </main>
     </div>
